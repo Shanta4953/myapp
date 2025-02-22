@@ -6,7 +6,7 @@ void main() {
     home: Scaffold(
       appBar: AppBar(
         title: const Text('Lab 06'),
-        backgroundColor: Colors.blueAccent, // AppBar এর ব্যাকগ্রাউন্ড কালার
+        backgroundColor: Colors.blueAccent, 
       ),
       drawer: Drawer(
         child: ListView(
