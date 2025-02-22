@@ -1,72 +1,61 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/body.dart';
 
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Scaffold(
-      appBar: AppBar(
-        title: const Text('Lab 06'),
-        backgroundColor: Colors.blueAccent, 
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            const DrawerHeader(
-              decoration:
-                  BoxDecoration(color: Color.fromARGB(255, 17, 141, 243)),
-              child: Text(
-                'Welcome!',
-                style: TextStyle(fontSize: 22, color: Colors.white),
+  runApp(const Lab06AdvancedUI());
+}
+
+/*
+  NAVIGATION
+  1. Drawer
+  2. Bottom Nav
+  3. Tab
+*/
+
+class Lab06AdvancedUI extends StatelessWidget {
+  const Lab06AdvancedUI({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Lab06 Advanced UI',
+      home: Scaffold(
+        drawer: Drawer(
+          backgroundColor: const Color.fromARGB(255, 242, 245, 247),
+          child: ListView(
+            children: [
+              Container(
+                height: 80,
+                child: DrawerHeader(
+                  child: Row(
+                    children: [
+                      Icon(Icons.people_alt_rounded),
+                      Text("Contacts"),
+                    ],
+                  ),
+                ),
               ),
-            ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text('Home'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(Icons.info),
-              title: const Text('About'),
-              onTap: () {},
-            ),
-          ],
-        ),
-      ),
-      body: Center(
-        child: const Text(
-          'Working for Navigation',
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
+              ListTile(
+                leading: Icon(Icons.mobile_screen_share),
+                title: Text("Device"),
+                trailing: Text("Anything"),
+                onTap: () {},
+              ),
+              ListTile(
+                leading: Icon(Icons.mobile_screen_share),
+                title: Text("Contacts"),
+                trailing: Text("Anything"),
+                onTap: () {},
+              ),
+            ],
           ),
         ),
+        appBar: AppBar(
+          title: const Text('Lab06 Advanced UI'),
+          backgroundColor: Colors.amber,
+        ),
+        body: AppBody(),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blueAccent,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Profile',
-          ),
-        ],
-        onTap: (int index) {
-          // Bottom navigation bar item clicked
-          // Add your logic for switching between pages here.
-        },
-      ),
-    ),
-  ));
+    );
+  }
 }
