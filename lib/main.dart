@@ -19,7 +19,7 @@ class Lab06AdvancedUI extends StatelessWidget {
             children: [
               CachedNetworkImage(
                 imageUrl:
-                    "https://cdn.prod.website-files.com/61845f7929f5aa517ebab941/6440f9477c2a321f0dd6ab61_How%20Artificial%20Intelligence%20(AI)%20Is%20Used%20In%20Biometrics.jpg",
+                    "https://i.pinimg.com/736x/d3/aa/8f/d3aa8f741511ac37625320751fabce3c.jpg",
                 placeholder: (context, url) => CircularProgressIndicator(),
                 errorWidget: (context, url, error) => Image.network(
                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmWru8q17zpOzzzT1s475ZS_8fOL1GS0teSw&s'),
